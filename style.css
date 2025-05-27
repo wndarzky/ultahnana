@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffc0cb, #f08080); /* Gradient pink background */
+    font-family: 'Pacifico', cursive; /* Playful font from Google Fonts */
+    overflow: hidden; /* Hide overflow for animations */
+    position: relative;
+    cursor: pointer; /* Indicate interactivity */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.happy-birthday-text {
+    font-size: 6em;
+    color: #ff69b4; /* Hot pink */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite alternate; /* Pulsing animation */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+    cursor: pointer;
+}
+
+.happy-birthday-text:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.cat-emoji {
+    font-size: 3em;
+    position: absolute;
+    opacity: 0;
+    animation: fadeInOutAndMove 5s forwards; /* Animation for flying cats */
+    pointer-events: none; /* Make cats not block clicks */
+}
+
+@keyframes fadeInOutAndMove {
+    0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
+}
+
+/* --- Decorations (optional) --- */
+.decoration {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.decoration:nth-child(1) { width: 50px; height: 50px; top: 10%; left: 15%; animation-delay: 0s; }
+.decoration:nth-child(2) { width: 30px; height: 30px; bottom: 5%; right: 20%; animation-delay: 2s; }
+.decoration:nth-child(3) { width: 40px; height: 40px; top: 30%; right: 5%; animation-delay: 4s; }
+.decoration:nth-child(4) { width: 60px; height: 60px; bottom: 15%; left: 10%; animation-delay: 6s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .happy-birthday-text {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .happy-birthday-text {
+        font-size: 2.5em;
+    }
+}
+
+/* ... (kode CSS yang sudah ada) ... */
+
+.new-tab-link {
+    display: inline-block; /* Membuat link bisa diatur lebar/tingginya */
+    margin-top: 30px; /* Jarak dari teks Happy Birthday */
+    padding: 15px 30px;
+    background-color: #ff69b4; /* Hot pink */
+    color: white;
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 1.5em;
+    border-radius: 50px; /* Bentuk tombol lonjong */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.new-tab-link:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+    transform: translateY(-5px); /* Efek sedikit terangkat saat hover */
+}
+
+/* Responsive adjustments untuk tautan */
+@media (max-width: 768px) {
+    .new-tab-link {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-tab-link {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

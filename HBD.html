@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Ulang Tahun, [Nama Seseorang]!</h1>
+        <p>Semoga hari istimewamu penuh kebahagiaan, tawa, dan semua hal indah yang kamu inginkan.</p>
+        <p>Terima kasih sudah menjadi bagian dari hidupku!</p>
+        <div class="animation">
+            <img src="https://via.placeholder.com/150/FFD700/FFFFFF?text=Kue!" alt="Kue Ulang Tahun" class="cake">
+        </div>
+        <button id="messageButton">Klik untuk Pesan Spesial!</button>
+        <p id="specialMessage" class="hidden">Ini adalah pesan rahasia yang hanya untukmu! Semoga kamu mendapatkan tahun yang luar biasa ke depan!</p>
+    </div>
+
+    <script>
+        document.getElementById('messageButton').addEventListener('click', function() {
+            var specialMessage = document.getElementById('specialMessage');
+            if (specialMessage.classList.contains('hidden')) {
+                specialMessage.classList.remove('hidden');
+                specialMessage.classList.add('visible');
+            } else {
+                specialMessage.classList.remove('visible');
+                specialMessage.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
